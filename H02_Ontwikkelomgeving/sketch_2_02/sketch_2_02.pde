@@ -1,0 +1,11 @@
+size(500, 500);
+background(255, 255, 255);
+textAlign(CENTER);
+fill(0, 0, 0);
+text("Boventekst", 250, 150);
+textAlign(RIGHT);
+fill(0, 0, 0);
+text("Midden", 450, 250);
+textAlign(LEFT);
+fill(0, 0, 0);
+text("Onder", 50, 350);
