@@ -119,14 +119,16 @@ void rects() {
   // Move Brown Rect
   bRect[0] += speedr;
 
-  // Checking if Blue ball collides with Brown Rectangle
-  float distBrown = dist(750, y3, bRect[0] + 50, bRect[1] + 50);
+  // Accurate circle-rectangle collision (handling corners correctly)
+  float closestX = constrain(750, bRect[0], bRect[0] + bRect[2]);
+  float closestY = constrain(y3, bRect[1], bRect[1] + bRect[3]);
+  float distBrown = dist(750, y3, closestX, closestY);
 
   // Bounce Brown Rectangle if it touches the Blue ball
   if (distBrown <= 100) {
     speedr = -speedr;
   }
-  
+
   fill(101, 67, 33);
   rect(bRect[0], bRect[1], bRect[2], bRect[3], bRect[4]);
 
