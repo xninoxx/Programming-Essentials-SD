@@ -119,10 +119,8 @@ void rects() {
   // Move Brown Rect
   bRect[0] += speedr;
 
-  // Accurate circle-rectangle collision (handling corners correctly)
-  float closestX = constrain(750, bRect[0], bRect[0] + bRect[2]);
-  float closestY = constrain(y3, bRect[1], bRect[1] + bRect[3]);
-  float distBrown = dist(750, y3, closestX, closestY);
+  // Checking if Blue ball collides with Brown Rectangle (meet vanaf het midden van de rechthoek)
+  float distBrown = dist(750, y3, bRect[0] + 50, bRect[1] + 50);
 
   // Bounce Brown Rectangle if it touches the Blue ball
   if (distBrown <= 100) {
@@ -132,15 +130,14 @@ void rects() {
   fill(101, 67, 33);
   rect(bRect[0], bRect[1], bRect[2], bRect[3], bRect[4]);
 
-  // Checking if Purple triangle reaches 600 pixels X or hits left edge, and bounces back
+  // Checking if Brown Rect hits screen edges and bounces back
   if (bRect[0] >= 1400) {
-    speedr = -10; // Purple Triangle goes left
+    speedr = -10;
   }
   if (bRect[0] <= 0) {
-    speedr = 10;  // Purple Triangle goes right
+    speedr = 10;
   }
 }
-
 void shapes_text() {
   // Text for Green ball
   fill(0, 0, 0);
