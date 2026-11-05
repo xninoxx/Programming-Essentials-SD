@@ -1,7 +1,7 @@
 int x = 0;
 
 void setup() {
-  size(1500, 700);
+  size(1500, 700);  
 }
 
 void draw() {
